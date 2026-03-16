@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <title>syllabus tracker</title>
+    <link rel = "stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+            }
+    </script>
+</head>
+<body>
+    <script src="script.js"></script>
+    <div class="app-container">
+        <div class="top-section">
+            <header>
+                
+                <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-transform: uppercase;">class 10<br>syllabus tracker</h1>
+                <div class="notif-container">
+    <button class="icon-btn" id="notif-btn">🔔</button>
+    <span id="notif-dot" class="notification-dot" style="display: none;"></span>
+                </div>
+
+            </header>
+            <div class="overall-progress-container">
+                <div class="circular-progress">
+                    <div class="inner-circle">
+                        <h2>0%</h2>
+                        <p style="text-transform: capitalize;">overall completed</p>
+                        <p id="overall-marks-text" class="marks-total">0 / 500</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-section">
+            <div class="section-header">
+                <h2 style="text-transform: uppercase;">subject card</h2>
+            </div>
+            <main class="subject-row">
+                <div class="subject-card">
+                    <div class="icon-box maths-icon">📐</div>
+                    <h3 style="text-transform: uppercase;">maths</h3>
+                    <div class="progress-info">
+                        <span class="marks-badge math-marks">0 / 80</span>
+                        <span class="maths-percent">0%</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-fill maths-fill" style ="width : 0%;"></div>
+                    </div>
+                    <a href ="maths.html"><button>view details</button></a>
+                </div>
+                <div class="subject-card">
+                    <div class="icon-box science-icon">🔬</div>
+                    <h3 style="text-transform: uppercase;">science</h3>
+                    <div class="progress-info">
+                        <span class="marks-badge sci-marks">0 / 80</span>
+                        <span class="sci-percent">0%</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-fill science-fill" style ="width : 0%;"></div>
+                    </div>
+                    <a href ="science.html"><button>view details</button></a>
+                </div>
+                <div class="subject-card">
+                    <div class="icon-box sst-icon">🌍</div>
+                    <h3 style="text-transform: uppercase;">sst</h3>
+                    <div class="progress-info">
+                        <span class="marks-badge sst-marks">0 / 80</span>
+                        <span class="sst-percent">0%</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-fill sst-fill" style ="width : 0%;"></div>
+                    </div>
+                    <a href="sst.html"><button>view details</button></a>
+                </div>
+                <div class="subject-card">
+                    <div class="icon-box english-icon">📗</div>
+                    <h3 style="text-transform: uppercase;">english</h3>
+                    <div class="progress-info">
+                        <span class="marks-badge english-marks">0 / 80</span>
+                        <span class="english-percent">0%</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-fill english-fill" style ="width : 0%;"></div>
+                    </div>
+                    <a href="english.html"><button>view details</button></a>
+                </div>
+                <div class="subject-card">
+                    <div class="icon-box hindi-icon">📕</div>
+                    <h3 style="text-transform: uppercase;">hindi</h3>
+                    <div class="progress-info">
+                        <span class="marks-badge hindi-marks">0 / 80</span>
+                        <span class="hindi-percent">0%</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-fill hindi-fill" style ="width : 0%;"></div>
+                    </div>
+                    <a href="hindi.html"><button>view details</button></a>
+                </div>
+            </main>
+        </div>
+
+        <div class="reset-section">
+    <button id="reset-btn" title="Reset All Progress">
+        <svg width="40" height="40" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <path style="fill:#3C66B1;" d="M256,0c-38.961,0-85.921,14.775-85.921,14.775C70.956,50.084,0,144.756,0,256 c0,141.385,114.615,256,256,256s256-114.615,256-256S397.385,0,256,0z M256,462.352c-113.965,0-206.352-92.387-206.352-206.352 S142.035,49.648,256,49.648S462.352,142.035,462.352,256S369.965,462.352,256,462.352z"></path>
+            <circle style="fill:#52A2E7;" cx="256" cy="256" r="221.978"></circle>
+            <g>
+                <path style="opacity:0.22;fill:#3C66B1;" d="M404.465,47.428 c29.859,41.873,47.427,93.116,47.427,148.464c0,141.385-114.615,256-256,256c-55.348,0-106.592-17.568-148.465-47.427 C93.842,469.555,169.963,512,256,512c141.385,0,256-114.615,256-256C512,169.963,469.555,93.842,404.465,47.428z"></path>
+                <path style="fill:#3C66B1;" d="M192.763,176.515c7.98-4.78,16.041-9.57,24.921-12.802v40.281 c-22.388,13.18-37.453,37.52-37.453,65.326c0,41.777,33.988,75.767,75.768,75.767c41.777,0,75.767-33.988,75.767-75.767 c0-27.806-15.066-52.146-37.453-65.327v-40.281c43.135,15.697,74.025,57.112,74.025,105.607 c0,61.944-50.394,112.338-112.338,112.338s-112.339-50.394-112.339-112.338c0-25.564,8.584-49.16,23.02-68.059 C166.678,201.26,181.279,183.394,192.763,176.515z"></path>
+                <path style="fill:#3C66B1;" d="M255.997,222.699L255.997,222.699c-8.62,0-15.673-7.053-15.673-15.673v-61.017 c0-8.62,7.053-15.673,15.673-15.673l0,0c8.62,0,15.673,7.053,15.673,15.673v61.017C271.67,215.646,264.617,222.699,255.997,222.699 z"></path>
+            </g>
+        </svg>
+        <span>Reset Data</span>
+    </button>
+        </div>
+
+    </div>
+</body>
+</html>

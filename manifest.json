@@ -1,0 +1,15 @@
+{
+  "name": "Class 10 Syllabus Tracker",
+  "short_name": "Syllabus",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#f4f7f6",
+  "theme_color": "#58cc9c",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/3407/3407024.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

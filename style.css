@@ -1,0 +1,431 @@
+/* 1. Global Reset & Body */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #eef2f5; 
+    display: flex;
+    justify-content: center; /* Centers the app on desktop screens */
+}
+
+/* 2. Main App Container (Mimics Mobile Screen) */
+.app-container {
+    width: 100%;
+    max-width: 414px; /* Standard large phone width */
+    background-color: #f8fbff;
+    min-height: 100vh;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+/* 3. Top Section with Curved Background */
+.top-section {
+    background-color: #dcf0ff; /* Light blue background */
+    padding: 30px 20px 40px 20px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 1.4rem;
+    color: #1a1a1a;
+    line-height: 1.3;
+}
+
+.icon-btn {
+    background: #cbe6ff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* 4. The Circular Progress Bar Magic */
+.overall-progress-container {
+    display: flex;
+    justify-content: center;
+}
+
+.circular-progress {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    /* The trick: A conic gradient creates the donut chart fill! */
+    background: conic-gradient(#58cc9c 0% 45%, #92cbf6 45% 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Controls the thickness of the colored ring */
+}
+
+.inner-circle {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.inner-circle h2 {
+    font-size: 2.5rem;
+    color: #1a1a1a;
+}
+
+.inner-circle p {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* 5. Bottom Section (The Horizontal Slider) */
+.bottom-section {
+    padding: 20px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.section-header h2 { font-size: 1.1rem; color: #1a1a1a; }
+.section-header a { color: #4da6e7; text-decoration: none; font-size: 0.9rem; font-weight: bold; }
+
+/* The horizontal scroll container */
+.subjects-row {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto; /* Allows sliding left to right */
+    padding-bottom: 15px;
+    /* Hides the ugly scrollbar while keeping the scroll function */
+    scrollbar-width: none; 
+}
+.subjects-row::-webkit-scrollbar { display: none; }
+
+/* 6. Individual Subject Cards */
+.subject-card {
+    background-color: white;
+    min-width: 140px; /* Prevents cards from squishing together */
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+}
+
+.icon-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+.maths-icon { background: #e6f2ff; color: #4da6e7; }
+.science-icon { background: #e5fef0; color: #58cc9c; }
+.sst-icon { background: #fff4e6; color: #f39c12; }
+.english-icon { background: #f4ebff; color: #9b59b6; }
+.hindi-icon {background:#dadcdc; color: #666; }
+.subject-card h3 { font-size: 0.95rem; margin-bottom: 10px; }
+
+/* Mini Progress Bars inside the cards */
+.progress-info {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.progress-bar-bg {
+    width: 100%;
+    height: 6px;
+    background-color: #eef2f5;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.progress-fill { height: 100%; border-radius: 5px; }
+.maths-fill { background-color: slategray; }
+.science-fill { background-color: slategray; }
+.sst-fill { background-color: slategray; }
+.english-fill { background-color: slategray; }
+.hindi-fill { background-color: slategray; }
+
+/* Card Buttons */
+.subject-card button {
+    background-color: #f4f8fb;
+    color: #4da6e7;
+    border: 1px solid #dcf0ff;
+    padding: 8px 0;
+    border-radius: 8px;
+    cursor : pointer;
+    font-size: 0.8rem;
+    font-weight: bold;
+    width: 100%;
+    transition: 0.2s;
+}
+.subject-card button:hover {
+    background-color: #4da6e7;
+    color: white;
+}
+
+
+/* =========================================
+   7. Subject Details Page (maths.html)
+   ========================================= */
+
+.subject-header {
+    padding: 30px 20px 20px 20px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+/* Matches the Math card background from the dashboard */
+.maths-header { background-color: #e6f2ff; } 
+.science-header { background-color: #e6f2ff; } 
+.sst-header { background-color: #e6f2ff; }
+.english-header { background-color: #e6f2ff; }
+.hindi-header { background-color: #e6f2ff; }
+
+.back-btn {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 8px 15px;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+.back-btn:hover { background: white; }
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.header-content h2 { font-size: 1.5rem; color: #1a1a1a; }
+.header-content p { color: #666; font-size: 0.9rem; margin-top: 5px; }
+
+.subject-progress {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.subject-progress span { 
+    font-size: 0.85rem; 
+    font-weight: bold; 
+    color: #666; 
+    display: block; 
+    margin-top: 10px; 
+    text-align: right;
+}
+
+/* Chapter List Styles */
+.chapters-container { padding: 20px; }
+.chapters-container h3 { margin-bottom: 15px; font-size: 1.1rem; color: #1a1a1a; }
+
+.chapter-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+.chapter-card:hover { transform: translateY(-3px); }
+
+.chapter-info { display: flex; align-items: center; gap: 15px; }
+.chapter-num {
+    background: #f4f8fb;
+    color: #4da6e7;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+.chapter-card h4 { font-size: 0.95rem; color: #1a1a1a; }
+
+/* Styles the checkbox to be larger and uses the app's green color */
+.chapter-card input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    accent-color: #58cc9c; 
+    cursor: pointer;
+}
+
+/* Styling for Multi-Part Subjects (Physics, Chem, etc.) */
+.subject-part {
+    margin-bottom: 30px; 
+}
+
+.part-title {
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #eef2f5; 
+}
+
+/* Marks Styling */
+.marks-total {
+    font-size: 0.85rem;
+    color: #4da6e7;
+    font-weight: bold;
+    margin-top: 2px;
+}
+
+.marks-badge {
+    color: #888;
+    font-weight: normal;
+    margin-right: auto; /* Pushes the percentage to the right */
+}
+
+.part-marks {
+    font-size: 0.85rem;
+    color: #888;
+    text-transform: none;
+    font-weight: normal;
+    float: right; /* Puts the marks on the right side of the line */
+    margin-top: 3px;
+}
+
+.chapter-marks {
+    display: block;
+    font-size: 0.75rem;
+    color: #a0a0a0;
+    margin-top: 3px;
+}
+
+.icon-btn {
+    transition: transform 0.2s ease;
+}
+
+.icon-btn:hover {
+    transform: scale(1.1); /* Slightly pops out when you hover over it */
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.2));
+}
+
+.notif-container {
+    position: relative; /* Acts as the anchor for the dot */
+    display: inline-block;
+}
+
+.notification-dot {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    background-color: #ff4d4d;
+    border: 2px solid white; /* Makes it pop against the background */
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(255, 77, 77, 0.5);
+}
+
+/* Make the dot pulse so you don't miss it! */
+.notification-dot {
+    animation: pulseDot 1.5s infinite;
+}
+
+@keyframes pulseDot {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.3); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* 1. Target the Unit Titles (unit 1: natural number) */
+.part-title {
+    text-transform: lowercase; /* Makes everything small first */
+}
+
+.part-title::first-letter {
+    text-transform: uppercase; /* Capitalizes just the 'u' in 'unit' */
+}
+
+/* 2. Target the Chapter Names (real numbers) */
+.chapter-info h4 {
+    text-transform: capitalize;
+}
+
+.subject-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.subject-card:hover {
+    transform: translateY(-8px); /* Lifts the card up */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Deepens the shadow */
+}
+
+/* If the width is 0%, give the container a soft pulse */
+.card-bar-bg:has(.card-fill[style*="width: 0%"]) {
+    animation: pulseGray 2s infinite;
+}
+
+
+
+
+.reset-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    padding-bottom: 60px;
+}
+
+#reset-btn {
+    background: white;
+    border: 2px solid #3C66B1; /* Match the icon blue */
+    border-radius: 20px;
+    padding: 15px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(60, 102, 177, 0.1);
+}
+
+#reset-btn span {
+    color: #3C66B1;
+    font-weight: bold;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#reset-btn:hover {
+    background: #e3aca4; /* Very light blue on hover */
+    transform: translateY(-3px); /* Subtle lift */
+    box-shadow: 0 8px 20px rgba(110, 147, 212, 0.2);
+}
+
+#reset-btn:active {
+    transform: scale(0.95); /* Clicks inward */
+}
