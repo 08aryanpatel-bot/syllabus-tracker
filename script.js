@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateSubjectCard(englishParts, '.english-fill', '.english-percent', '.english-marks');
 
         const hindiParts = [
-            { prefix: 'hin-ksh-', totalCh: 13, marks: 15 },
+            { prefix: 'hin-ksh-', totalCh: 12, marks: 15 },
             { prefix: 'hin-kri-', totalCh: 3, marks: 15 },
             { prefix: 'hin-read-', totalCh: 1, marks: 14},
             { prefix: 'hin-wg-', totalCh: 8, marks: 36}
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'math-u1-': 6 / 1, 'math-u2-': 20 / 4, 'math-u3-': 6 / 1, 'math-u4-': 15 / 2, 'math-u5-': 12 / 2, 'math-u6-': 10 / 2, 'math-u7-': 11 / 2,
             'sst-his-': 20 / 5, 'sst-geo-': 20 / 7, 'sst-pol-': 20 / 5, 'sst-eco-': 20 / 5,
             'eng-ff-': 20 / 9, 'eng-fwf-': 20 / 9, 'eng-read-': 20 / 1, 'eng-wg-': 20 / 7,
-            'hin-ksh-': 15 / 13, 'hin-kri-': 15 / 3, 'hin-read-': 14 / 1, 'hin-wg-': 36 / 8
+            'hin-ksh-': 15 / 12, 'hin-kri-': 15 / 3, 'hin-read-': 14 / 1, 'hin-wg-': 36 / 8
         };
 
         checkboxes.forEach(box => {
