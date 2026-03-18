@@ -379,7 +379,6 @@ header h1 {
 }
 
 .subject-card:hover {
-    transform: translateY(-8px); /* Lifts the card up */
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Deepens the shadow */
 }
 
