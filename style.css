@@ -327,7 +327,6 @@ header h1 {
 }
 
 .icon-btn:hover {
-    transform: scale(1.1); /* Slightly pops out when you hover over it */
     filter: drop-shadow(0 0 5px rgba(0,0,0,0.2));
 }
 
