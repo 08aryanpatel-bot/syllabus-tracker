@@ -1,15 +1,17 @@
 {
   "name": "Class 10 Syllabus Tracker",
   "short_name": "Syllabus",
-  "start_url": "index.html",
+  "start_url": "/syllabus-tracker/index.html",
+  "scope": "/syllabus-tracker/",
   "display": "standalone",
   "background_color": "#f4f7f6",
   "theme_color": "#58cc9c",
   "icons": [
     {
-      "src": "icon.jpeg",
+      "src": "/syllabus-tracker/icon.jpeg",
       "sizes": "512x512",
       "type": "image/jpeg"
     }
-  ]
+  ],
+  "id": "/syllabus-tracker/"
 }
