@@ -1,6 +1,6 @@
 {
   "name": "Class 10 Syllabus Tracker",
-  "short_name": "Syllabus",
+  "short_name": "Syllabuspro",
   "start_url": "/syllabus-tracker/index.html",
   "scope": "/syllabus-tracker/",
   "display": "standalone",
@@ -12,6 +12,5 @@
       "sizes": "512x512",
       "type": "image/jpeg"
     }
-  ],
-  "id": "/syllabus-tracker/"
+  ]
 }
